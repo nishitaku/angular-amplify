@@ -18,8 +18,38 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-builders/custom-webpack:browser",
           "options": {
+            "customWebpackConfig": {
+              "path": "./custom-webpack.config.js",
+              "mergeRules": {
+                "module": {
+                  "rules": "prepend"
+                }
+              },
+              "replaceDuplicatePlugins": true
+            },
+            "allowedCommonJsDependencies": [
+              "uuid",
+              "ulid",
+              "url",
+              "lodash/get",
+              "lodash/isEmpty",
+              "lodash/isEqual",
+              "@aws-amplify/core",
+              "buffer",
+              "@aws-crypto/sha256-js",
+              "crypto-js/hmac-sha256",
+              "crypto-js/lib-typedarrays",
+              "crypto-js/core",
+              "zen-observable",
+              "js-cookie",
+              "isomorphic-unfetch",
+              "@aws-crypto/crc32",
+              "fast-xml-parser",
+              "@aws-crypto/sha256-browser",
+              "axios"
+            ],
             "outputPath": "dist/angular-amplify",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -67,7 +97,7 @@
           "defaultConfiguration": "production"
         },
         "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
+          "builder": "@angular-builders/custom-webpack:dev-server",
           "configurations": {
             "production": {
               "browserTarget": "angular-amplify:build:production"
