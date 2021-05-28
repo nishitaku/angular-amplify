@@ -12,9 +12,15 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
+import { AnalyticsComponent } from './pages/analytics/analytics.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, MainComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    MainComponent,
+    AnalyticsComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
