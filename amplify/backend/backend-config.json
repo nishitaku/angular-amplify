@@ -1,1 +1,15 @@
-{}
+{
+  "auth": {
+    "cognitof1f2b13f": {
+      "service": "Cognito",
+      "serviceType": "managed",
+      "providerPlugin": "awscloudformation"
+    }
+  },
+  "analytics": {
+    "angularamplify": {
+      "service": "Pinpoint",
+      "providerPlugin": "awscloudformation"
+    }
+  }
+}
