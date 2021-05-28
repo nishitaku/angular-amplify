@@ -1,4 +1,15 @@
 {
-  "auth": {},
-  "analytics": {}
+  "auth": {
+    "cognitoda374191": {
+      "service": "Cognito",
+      "serviceType": "managed",
+      "providerPlugin": "awscloudformation"
+    }
+  },
+  "analytics": {
+    "angularamplify": {
+      "service": "Pinpoint",
+      "providerPlugin": "awscloudformation"
+    }
+  }
 }
