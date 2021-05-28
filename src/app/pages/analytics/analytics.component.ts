@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Analytics } from 'aws-amplify';
 
 @Component({
   selector: 'app-analytics',
@@ -8,5 +9,8 @@ import { Component, OnInit } from '@angular/core';
 export class AnalyticsComponent implements OnInit {
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    Analytics.record({ name: 'openAnalyticsPage' });
+    console.log('send openAnalyticsPage event');
+  }
 }
