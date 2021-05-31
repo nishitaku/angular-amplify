@@ -1,7 +1,36 @@
 {
     "identityPoolName": "angularamplify_identitypool_da374191",
     "allowUnauthenticatedIdentities": true,
-    "authSelections": "identityPoolOnly",
+    "resourceNameTruncated": "cognitf58bc1e2",
+    "userPoolName": "cognitoda374191_userpool_f58bc1e2",
+    "autoVerifiedAttributes": [
+        "email"
+    ],
+    "mfaConfiguration": "OFF",
+    "mfaTypes": [
+        "SMS Text Message"
+    ],
+    "smsAuthenticationMessage": "Your authentication code is {####}",
+    "smsVerificationMessage": "Your verification code is {####}",
+    "emailVerificationSubject": "Your verification code",
+    "emailVerificationMessage": "Your verification code is {####}",
+    "defaultPasswordPolicy": false,
+    "passwordPolicyMinLength": 8,
+    "passwordPolicyCharacters": [],
+    "requiredAttributes": [
+        "email"
+    ],
+    "userpoolClientGenerateSecret": false,
+    "userpoolClientRefreshTokenValidity": 30,
+    "userpoolClientWriteAttributes": [
+        "email"
+    ],
+    "userpoolClientReadAttributes": [
+        "email"
+    ],
+    "userpoolClientLambdaRole": "cognitf58bc1e2_userpoolclient_lambda_role",
+    "userpoolClientSetAttributes": false,
+    "authSelections": "identityPoolAndUserPool",
     "resourceName": "cognitoda374191",
     "sharedId": "da374191",
     "authRoleArn": {

@@ -11,5 +11,11 @@
       "service": "Pinpoint",
       "providerPlugin": "awscloudformation"
     }
+  },
+  "storage": {
+    "angularamplify": {
+      "service": "S3",
+      "providerPlugin": "awscloudformation"
+    }
   }
 }
