@@ -13,6 +13,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { AnalyticsComponent } from './pages/analytics/analytics.component';
+import { AuthComponent } from './pages/auth/auth.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { AnalyticsComponent } from './pages/analytics/analytics.component';
     HomeComponent,
     MainComponent,
     AnalyticsComponent,
+    AuthComponent,
   ],
   imports: [
     BrowserModule,
