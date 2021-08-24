@@ -14,6 +14,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { AnalyticsComponent } from './pages/analytics/analytics.component';
 import { AuthComponent } from './pages/auth/auth.component';
+import { AuthTemplateUiComponent } from './pages/auth-template-ui/auth-template-ui.component';
+import { AmplifyUIAngularModule } from '@aws-amplify/ui-angular';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,7 @@ import { AuthComponent } from './pages/auth/auth.component';
     MainComponent,
     AnalyticsComponent,
     AuthComponent,
+    AuthTemplateUiComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,6 +36,7 @@ import { AuthComponent } from './pages/auth/auth.component';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
+    AmplifyUIAngularModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
