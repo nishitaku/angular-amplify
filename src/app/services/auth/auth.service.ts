@@ -31,4 +31,8 @@ export class AuthService {
   getCurrentSession(): Promise<any> {
     return Auth.currentSession();
   }
+
+  getUserSession(user: any): Promise<any> {
+    return Auth.userSession(user);
+  }
 }

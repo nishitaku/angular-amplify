@@ -8,10 +8,16 @@ import { AuthService } from 'src/app/services/auth/auth.service';
 })
 export class AuthTemplateUiComponent implements OnInit {
   data: any;
+  user: any;
 
   constructor(private authService: AuthService) {}
 
   ngOnInit(): void {}
+
+  async onClickGetAuthenticatedUser() {
+    this.data = await this.authService.getCurrentAuthenticatedUser();
+    this.user = this.data;
+  }
 
   async onClickGetCurrentUserInfo() {
     this.data = await this.authService.getCurrentUserInfo();
@@ -25,15 +31,15 @@ export class AuthTemplateUiComponent implements OnInit {
     this.data = await this.authService.getCurrentPoolUser();
   }
 
-  async onClickGetAuthenticatedUser() {
-    this.data = await this.authService.getCurrentAuthenticatedUser();
-  }
-
   async onClickGetCredentials() {
     this.data = await this.authService.getCurrentCredentials();
   }
 
   async onClickGetCurrentSession() {
     this.data = await this.authService.getCurrentSession();
+  }
+
+  async onClickGetUserSession() {
+    this.data = await this.authService.getUserSession(this.user);
   }
 }
