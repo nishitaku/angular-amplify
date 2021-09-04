@@ -1,11 +1,16 @@
 <amplify-authenticator>
   <div>
     <amplify-sign-out></amplify-sign-out>
-    <button (click)="onClickGetAuthenticatedUser()">
-      認証ユーザー情報を取得
+    <button (click)="onClickGetAuthenticatedUser()">AuthenticatedUser</button>
+    <button (click)="onClickGetCurrentUserInfo()">CurrentUserInfo</button>
+    <button (click)="onClickGetCurrentUserCredentials()">
+      CurrentUserCredentials
     </button>
+    <button (click)="onClickGetCurrentPoolUser()">CurrentPoolUser</button>
+    <button (click)="onClickGetCurrentSession()">CurrentSession</button>
+    <button (click)="onClickGetCredentials()">Credentials</button>
     <pre style="background-color: whitesmoke">
-      {{ authenticatedUser | json }}
+      {{ data | json }}
     </pre>
   </div>
 </amplify-authenticator>

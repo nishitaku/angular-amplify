@@ -7,14 +7,33 @@ import { AuthService } from 'src/app/services/auth/auth.service';
   styleUrls: ['./auth-template-ui.component.scss'],
 })
 export class AuthTemplateUiComponent implements OnInit {
-  authenticatedUser: any;
+  data: any;
 
   constructor(private authService: AuthService) {}
 
   ngOnInit(): void {}
 
+  async onClickGetCurrentUserInfo() {
+    this.data = await this.authService.getCurrentUserInfo();
+  }
+
+  async onClickGetCurrentUserCredentials() {
+    this.data = await this.authService.getCurrentUserCredentials();
+  }
+
+  async onClickGetCurrentPoolUser() {
+    this.data = await this.authService.getCurrentPoolUser();
+  }
+
   async onClickGetAuthenticatedUser() {
-    this.authenticatedUser =
-      await this.authService.getCurrentAuthenticatedUser();
+    this.data = await this.authService.getCurrentAuthenticatedUser();
+  }
+
+  async onClickGetCredentials() {
+    this.data = await this.authService.getCurrentCredentials();
+  }
+
+  async onClickGetCurrentSession() {
+    this.data = await this.authService.getCurrentSession();
   }
 }
