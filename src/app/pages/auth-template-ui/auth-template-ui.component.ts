@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/services/auth/auth.service';
 
 @Component({
   selector: 'app-auth-template-ui',
@@ -6,7 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./auth-template-ui.component.scss'],
 })
 export class AuthTemplateUiComponent implements OnInit {
-  constructor() {}
+  authenticatedUser: any;
+
+  constructor(private authService: AuthService) {}
 
   ngOnInit(): void {}
+
+  async onClickGetAuthenticatedUser() {
+    this.authenticatedUser =
+      await this.authService.getCurrentAuthenticatedUser();
+  }
 }

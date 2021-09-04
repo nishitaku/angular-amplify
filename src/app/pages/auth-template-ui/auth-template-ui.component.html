@@ -1,6 +1,11 @@
 <amplify-authenticator>
   <div>
-    My App
     <amplify-sign-out></amplify-sign-out>
+    <button (click)="onClickGetAuthenticatedUser()">
+      認証ユーザー情報を取得
+    </button>
+    <div>
+      {{ authenticatedUser | json }}
+    </div>
   </div>
 </amplify-authenticator>
