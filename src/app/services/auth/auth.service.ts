@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { ICredentials } from '@aws-amplify/core';
 import { Auth } from 'aws-amplify';
 
 @Injectable({
@@ -11,7 +12,7 @@ export class AuthService {
     return Auth.currentUserInfo();
   }
 
-  getCurrentUserCredentials(): Promise<any> {
+  getCurrentUserCredentials(): Promise<ICredentials> {
     return Auth.currentUserCredentials();
   }
 
@@ -23,7 +24,7 @@ export class AuthService {
     return Auth.currentAuthenticatedUser();
   }
 
-  getCurrentCredentials(): Promise<any> {
+  getCurrentCredentials(): Promise<ICredentials> {
     return Auth.currentCredentials();
   }
 
