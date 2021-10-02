@@ -16,6 +16,7 @@ import { AnalyticsComponent } from './pages/analytics/analytics.component';
 import { AuthComponent } from './pages/auth/auth.component';
 import { AuthTemplateUiComponent } from './pages/auth-template-ui/auth-template-ui.component';
 import { AmplifyUIAngularModule } from '@aws-amplify/ui-angular';
+import { GraphqlComponent } from './pages/graphql/graphql.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { AmplifyUIAngularModule } from '@aws-amplify/ui-angular';
     AnalyticsComponent,
     AuthComponent,
     AuthTemplateUiComponent,
+    GraphqlComponent,
   ],
   imports: [
     BrowserModule,

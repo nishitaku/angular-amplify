@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AnalyticsComponent } from './pages/analytics/analytics.component';
 import { AuthTemplateUiComponent } from './pages/auth-template-ui/auth-template-ui.component';
 import { AuthComponent } from './pages/auth/auth.component';
+import { GraphqlComponent } from './pages/graphql/graphql.component';
 import { HomeComponent } from './pages/home/home.component';
 
 const routes: Routes = [
@@ -11,6 +12,7 @@ const routes: Routes = [
   { path: 'analytics', component: AnalyticsComponent },
   { path: 'authTemplate', component: AuthTemplateUiComponent },
   { path: 'auth', component: AuthComponent },
+  { path: 'graphql', component: GraphqlComponent },
 ];
 
 @NgModule({
