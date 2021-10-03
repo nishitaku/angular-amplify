@@ -1,5 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { APIService, CreateTodoInput } from 'src/app/API.service';
+import {
+  APIService,
+  CreateTodoInput,
+  DeleteTodoInput,
+} from 'src/app/API.service';
+
+interface TodoModel {
+  index: number;
+  id: string;
+  name: string;
+  description: string;
+}
 
 @Component({
   selector: 'app-graphql',
@@ -7,8 +18,13 @@ import { APIService, CreateTodoInput } from 'src/app/API.service';
   styleUrls: ['./graphql.component.scss'],
 })
 export class GraphqlComponent implements OnInit {
-  todoList: { index: number; name: string; description: string }[] = [];
-  displayedTodoColumns: string[] = ['index', 'name', 'description'];
+  todoList: TodoModel[] = [];
+  displayedTodoColumns: string[] = [
+    'index',
+    'name',
+    'description',
+    'deleteAction',
+  ];
 
   todoName = '';
   todoDescription = '';
@@ -33,12 +49,22 @@ export class GraphqlComponent implements OnInit {
     console.log(JSON.stringify(result));
     this.todoList =
       result.items?.map((item, index) => {
-        const todo = {
-          index,
+        const todo: TodoModel = {
+          index: index + 1,
+          id: item?.id ?? '',
           name: item?.name ?? 'no name',
           description: item?.description ?? '',
         };
         return todo;
       }) ?? [];
+  }
+
+  async onClickDelete(todo: TodoModel) {
+    const input: DeleteTodoInput = {
+      id: todo.id,
+    };
+    const result = await this.apiService.DeleteTodo(input);
+    console.log(result);
+    this.fetchTodoList();
   }
 }
