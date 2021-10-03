@@ -19,6 +19,7 @@ export class GraphqlComponent implements OnInit {
       name: this.todoName,
       description: this.todoDescription,
     };
-    this.apiService.CreateTodo(input);
+    const result = await this.apiService.CreateTodo(input);
+    console.log(JSON.stringify(result));
   }
 }

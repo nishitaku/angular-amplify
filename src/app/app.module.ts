@@ -12,6 +12,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 import { AnalyticsComponent } from './pages/analytics/analytics.component';
 import { AuthComponent } from './pages/auth/auth.component';
 import { AuthTemplateUiComponent } from './pages/auth-template-ui/auth-template-ui.component';
@@ -40,6 +42,8 @@ import { FormsModule } from '@angular/forms';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
+    MatFormFieldModule,
+    MatInputModule,
     AmplifyUIAngularModule,
   ],
   providers: [],

@@ -1,16 +1,37 @@
-<div>
-  <label for="todoName">name: </label>
-  <input id="todoName" type="text" name="todoName" [(ngModel)]="todoName" />
+<div class="root">
+  <form (ngSubmit)="onClickCreateTodo()" #createTodoForm="ngForm">
+    <mat-form-field appearance="fill">
+      <mat-label>name</mat-label>
+      <input
+        matInput
+        placeholder="todoName"
+        id="todoName"
+        type="text"
+        name="todoName"
+        [(ngModel)]="todoName"
+        placeholder="name"
+        required
+      />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>description</mat-label>
+      <input
+        matInput
+        placeholder="todoDescription"
+        id="todoDescription"
+        type="text"
+        name="todoDescription"
+        [(ngModel)]="todoDescription"
+        placeholder="description"
+      />
+    </mat-form-field>
+    <button
+      type="submit"
+      mat-raised-button
+      color="primary"
+      [disabled]="createTodoForm.invalid"
+    >
+      CreateTodo
+    </button>
+  </form>
 </div>
-<div>
-  <label for="todoDescription">description: </label>
-  <input
-    id="todoDescription"
-    type="text"
-    name="todoDescription"
-    [(ngModel)]="todoDescription"
-  />
-</div>
-<button (click)="onClickCreateTodo()" [disabled]="todoName === ''">
-  CreateTodo
-</button>
