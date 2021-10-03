@@ -7,14 +7,17 @@ import { APIService, CreateTodoInput } from 'src/app/API.service';
   styleUrls: ['./graphql.component.scss'],
 })
 export class GraphqlComponent implements OnInit {
+  todoName = '';
+  todoDescription = '';
+
   constructor(private apiService: APIService) {}
 
   ngOnInit(): void {}
 
   async onClickCreateTodo() {
     const input: CreateTodoInput = {
-      name: 'first',
-      description: 'first todo',
+      name: this.todoName,
+      description: this.todoDescription,
     };
     this.apiService.CreateTodo(input);
   }

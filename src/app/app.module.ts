@@ -17,6 +17,7 @@ import { AuthComponent } from './pages/auth/auth.component';
 import { AuthTemplateUiComponent } from './pages/auth-template-ui/auth-template-ui.component';
 import { AmplifyUIAngularModule } from '@aws-amplify/ui-angular';
 import { GraphqlComponent } from './pages/graphql/graphql.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { GraphqlComponent } from './pages/graphql/graphql.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     LayoutModule,
+    FormsModule,
     MatToolbarModule,
     MatButtonModule,
     MatSidenavModule,

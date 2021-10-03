@@ -1,1 +1,16 @@
-<button (click)="onClickCreateTodo()">CreateTodo</button>
+<div>
+  <label for="todoName">name: </label>
+  <input id="todoName" type="text" name="todoName" [(ngModel)]="todoName" />
+</div>
+<div>
+  <label for="todoDescription">description: </label>
+  <input
+    id="todoDescription"
+    type="text"
+    name="todoDescription"
+    [(ngModel)]="todoDescription"
+  />
+</div>
+<button (click)="onClickCreateTodo()" [disabled]="todoName === ''">
+  CreateTodo
+</button>
