@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import {
   APIService,
   CreateTodoInput,
   DeleteTodoInput,
 } from 'src/app/API.service';
+import { TodoDialogComponent } from '../shared/todo-dialog/todo-dialog.component';
 
-interface TodoModel {
+export interface TodoModel {
   index: number;
   id: string;
   name: string;
@@ -29,19 +31,38 @@ export class GraphqlComponent implements OnInit {
   todoName = '';
   todoDescription = '';
 
-  constructor(private apiService: APIService) {}
+  constructor(private apiService: APIService, private dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.fetchTodoList();
   }
 
   async onClickCreateTodo() {
+    await this.openCreateTodoDialog();
+  }
+
+  private async openCreateTodoDialog() {
+    const dialogRef = this.dialog.open(TodoDialogComponent, {
+      data: {
+        todo: { name: '', description: '' },
+        title: 'Create Todo',
+      },
+    });
+    const result = await dialogRef.afterClosed().toPromise();
+    if (result != null) {
+      console.log(result);
+      await this.addTodo(result);
+    }
+  }
+
+  private async addTodo(todo: TodoModel) {
     const input: CreateTodoInput = {
-      name: this.todoName,
-      description: this.todoDescription,
+      name: todo.name,
+      description: todo.description,
     };
     const result = await this.apiService.CreateTodo(input);
-    console.log(JSON.stringify(result));
+    console.log(result);
+    this.fetchTodoList();
   }
 
   async fetchTodoList() {

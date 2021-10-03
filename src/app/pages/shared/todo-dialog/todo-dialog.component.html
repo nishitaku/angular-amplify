@@ -1,0 +1,42 @@
+<h1 mat-dialog-title>{{ data.title }}</h1>
+<div mat-dialog-content>
+  <form #todoForm="ngForm">
+    <mat-form-field appearance="fill">
+      <mat-label>name</mat-label>
+      <input
+        matInput
+        placeholder="todoName"
+        id="todoName"
+        type="text"
+        name="todoName"
+        [(ngModel)]="data.todo.name"
+        placeholder="name"
+        required
+      />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>description</mat-label>
+      <input
+        matInput
+        placeholder="todoDescription"
+        id="todoDescription"
+        type="text"
+        name="todoDescription"
+        [(ngModel)]="data.todo.description"
+        placeholder="description"
+      />
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions align="end">
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button
+    mat-button
+    color="primary"
+    [mat-dialog-close]="data.todo"
+    cdkFocusInitial
+    [disabled]="todoForm.invalid"
+  >
+    Create
+  </button>
+</div>

@@ -22,39 +22,7 @@
     <tr mat-header-row *matHeaderRowDef="displayedTodoColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedTodoColumns"></tr>
   </table>
-  <form (ngSubmit)="onClickCreateTodo()" #createTodoForm="ngForm">
-    <mat-form-field appearance="fill">
-      <mat-label>name</mat-label>
-      <input
-        matInput
-        placeholder="todoName"
-        id="todoName"
-        type="text"
-        name="todoName"
-        [(ngModel)]="todoName"
-        placeholder="name"
-        required
-      />
-    </mat-form-field>
-    <mat-form-field appearance="fill">
-      <mat-label>description</mat-label>
-      <input
-        matInput
-        placeholder="todoDescription"
-        id="todoDescription"
-        type="text"
-        name="todoDescription"
-        [(ngModel)]="todoDescription"
-        placeholder="description"
-      />
-    </mat-form-field>
-    <button
-      type="submit"
-      mat-raised-button
-      color="primary"
-      [disabled]="createTodoForm.invalid"
-    >
-      CreateTodo
-    </button>
-  </form>
+  <button mat-raised-button color="primary" (click)="onClickCreateTodo()">
+    Create Todo
+  </button>
 </div>
