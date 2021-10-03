@@ -8,9 +8,8 @@ describe('GraphqlComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ GraphqlComponent ]
-    })
-    .compileComponents();
+      declarations: [GraphqlComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

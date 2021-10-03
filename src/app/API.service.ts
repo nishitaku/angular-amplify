@@ -1,9 +1,9 @@
 /* tslint:disable */
 /* eslint-disable */
 //  This file was automatically generated and should not be edited.
-import { Injectable } from "@angular/core";
-import API, { graphqlOperation, GraphQLResult } from "@aws-amplify/api-graphql";
-import { Observable } from "zen-observable-ts";
+import { Injectable } from '@angular/core';
+import API, { graphqlOperation, GraphQLResult } from '@aws-amplify/api-graphql';
+import { Observable } from 'zen-observable-ts';
 
 export interface SubscriptionResponse<T> {
   value: GraphQLResult<T>;
@@ -46,16 +46,16 @@ export type ModelStringInput = {
 };
 
 export enum ModelAttributeTypes {
-  binary = "binary",
-  binarySet = "binarySet",
-  bool = "bool",
-  list = "list",
-  map = "map",
-  number = "number",
-  numberSet = "numberSet",
-  string = "string",
-  stringSet = "stringSet",
-  _null = "_null"
+  binary = 'binary',
+  binarySet = 'binarySet',
+  bool = 'bool',
+  list = 'list',
+  map = 'map',
+  number = 'number',
+  numberSet = 'numberSet',
+  string = 'string',
+  stringSet = 'stringSet',
+  _null = '_null',
 }
 
 export type ModelSizeInput = {
@@ -69,7 +69,7 @@ export type ModelSizeInput = {
 };
 
 export type Todo = {
-  __typename: "Todo";
+  __typename: 'Todo';
   id: string;
   name: string;
   description?: string | null;
@@ -113,13 +113,13 @@ export type ModelIDInput = {
 };
 
 export type ModelTodoConnection = {
-  __typename: "ModelTodoConnection";
+  __typename: 'ModelTodoConnection';
   items?: Array<Todo | null> | null;
   nextToken?: string | null;
 };
 
 export type CreateTodoMutation = {
-  __typename: "Todo";
+  __typename: 'Todo';
   id: string;
   name: string;
   description?: string | null;
@@ -128,7 +128,7 @@ export type CreateTodoMutation = {
 };
 
 export type UpdateTodoMutation = {
-  __typename: "Todo";
+  __typename: 'Todo';
   id: string;
   name: string;
   description?: string | null;
@@ -137,7 +137,7 @@ export type UpdateTodoMutation = {
 };
 
 export type DeleteTodoMutation = {
-  __typename: "Todo";
+  __typename: 'Todo';
   id: string;
   name: string;
   description?: string | null;
@@ -146,7 +146,7 @@ export type DeleteTodoMutation = {
 };
 
 export type GetTodoQuery = {
-  __typename: "Todo";
+  __typename: 'Todo';
   id: string;
   name: string;
   description?: string | null;
@@ -155,9 +155,9 @@ export type GetTodoQuery = {
 };
 
 export type ListTodosQuery = {
-  __typename: "ModelTodoConnection";
+  __typename: 'ModelTodoConnection';
   items?: Array<{
-    __typename: "Todo";
+    __typename: 'Todo';
     id: string;
     name: string;
     description?: string | null;
@@ -168,7 +168,7 @@ export type ListTodosQuery = {
 };
 
 export type OnCreateTodoSubscription = {
-  __typename: "Todo";
+  __typename: 'Todo';
   id: string;
   name: string;
   description?: string | null;
@@ -177,7 +177,7 @@ export type OnCreateTodoSubscription = {
 };
 
 export type OnUpdateTodoSubscription = {
-  __typename: "Todo";
+  __typename: 'Todo';
   id: string;
   name: string;
   description?: string | null;
@@ -186,7 +186,7 @@ export type OnUpdateTodoSubscription = {
 };
 
 export type OnDeleteTodoSubscription = {
-  __typename: "Todo";
+  __typename: 'Todo';
   id: string;
   name: string;
   description?: string | null;
@@ -195,7 +195,7 @@ export type OnDeleteTodoSubscription = {
 };
 
 @Injectable({
-  providedIn: "root"
+  providedIn: 'root',
 })
 export class APIService {
   async CreateTodo(
@@ -213,7 +213,7 @@ export class APIService {
         }
       }`;
     const gqlAPIServiceArguments: any = {
-      input
+      input,
     };
     if (condition) {
       gqlAPIServiceArguments.condition = condition;
@@ -238,7 +238,7 @@ export class APIService {
         }
       }`;
     const gqlAPIServiceArguments: any = {
-      input
+      input,
     };
     if (condition) {
       gqlAPIServiceArguments.condition = condition;
@@ -263,7 +263,7 @@ export class APIService {
         }
       }`;
     const gqlAPIServiceArguments: any = {
-      input
+      input,
     };
     if (condition) {
       gqlAPIServiceArguments.condition = condition;
@@ -285,7 +285,7 @@ export class APIService {
         }
       }`;
     const gqlAPIServiceArguments: any = {
-      id
+      id,
     };
     const response = (await API.graphql(
       graphqlOperation(statement, gqlAPIServiceArguments)
@@ -327,7 +327,7 @@ export class APIService {
     return <ListTodosQuery>response.data.listTodos;
   }
   OnCreateTodoListener: Observable<
-    SubscriptionResponse<Pick<__SubscriptionContainer, "onCreateTodo">>
+    SubscriptionResponse<Pick<__SubscriptionContainer, 'onCreateTodo'>>
   > = API.graphql(
     graphqlOperation(
       `subscription OnCreateTodo {
@@ -342,11 +342,11 @@ export class APIService {
       }`
     )
   ) as Observable<
-    SubscriptionResponse<Pick<__SubscriptionContainer, "onCreateTodo">>
+    SubscriptionResponse<Pick<__SubscriptionContainer, 'onCreateTodo'>>
   >;
 
   OnUpdateTodoListener: Observable<
-    SubscriptionResponse<Pick<__SubscriptionContainer, "onUpdateTodo">>
+    SubscriptionResponse<Pick<__SubscriptionContainer, 'onUpdateTodo'>>
   > = API.graphql(
     graphqlOperation(
       `subscription OnUpdateTodo {
@@ -361,11 +361,11 @@ export class APIService {
       }`
     )
   ) as Observable<
-    SubscriptionResponse<Pick<__SubscriptionContainer, "onUpdateTodo">>
+    SubscriptionResponse<Pick<__SubscriptionContainer, 'onUpdateTodo'>>
   >;
 
   OnDeleteTodoListener: Observable<
-    SubscriptionResponse<Pick<__SubscriptionContainer, "onDeleteTodo">>
+    SubscriptionResponse<Pick<__SubscriptionContainer, 'onDeleteTodo'>>
   > = API.graphql(
     graphqlOperation(
       `subscription OnDeleteTodo {
@@ -380,6 +380,6 @@ export class APIService {
       }`
     )
   ) as Observable<
-    SubscriptionResponse<Pick<__SubscriptionContainer, "onDeleteTodo">>
+    SubscriptionResponse<Pick<__SubscriptionContainer, 'onDeleteTodo'>>
   >;
 }
