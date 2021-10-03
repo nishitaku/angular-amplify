@@ -1,4 +1,21 @@
 <div class="root">
+  <h3>Todo</h3>
+  <table mat-table [dataSource]="todoList">
+    <ng-container matColumnDef="index">
+      <th mat-header-cell *matHeaderCellDef>#</th>
+      <td mat-cell *matCellDef="let element">{{ element.index }}</td>
+    </ng-container>
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef>name</th>
+      <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+    </ng-container>
+    <ng-container matColumnDef="description">
+      <th mat-header-cell *matHeaderCellDef>description</th>
+      <td mat-cell *matCellDef="let element">{{ element.description }}</td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedTodoColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedTodoColumns"></tr>
+  </table>
   <form (ngSubmit)="onClickCreateTodo()" #createTodoForm="ngForm">
     <mat-form-field appearance="fill">
       <mat-label>name</mat-label>

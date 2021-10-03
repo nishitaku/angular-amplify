@@ -1,12 +1,14 @@
+// Angular
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { HomeComponent } from './pages/home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MainComponent } from './pages/main/main.component';
+import { FormsModule } from '@angular/forms';
+import { AppRoutingModule } from './app-routing.module';
+
+// Angular CDK
 import { LayoutModule } from '@angular/cdk/layout';
+
+// Angular Material
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -14,12 +16,19 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatTableModule } from '@angular/material/table';
+
+// Amplify
+import { AmplifyUIAngularModule } from '@aws-amplify/ui-angular';
+
+// Components
+import { AppComponent } from './app.component';
+import { HomeComponent } from './pages/home/home.component';
+import { MainComponent } from './pages/main/main.component';
 import { AnalyticsComponent } from './pages/analytics/analytics.component';
 import { AuthComponent } from './pages/auth/auth.component';
 import { AuthTemplateUiComponent } from './pages/auth-template-ui/auth-template-ui.component';
-import { AmplifyUIAngularModule } from '@aws-amplify/ui-angular';
 import { GraphqlComponent } from './pages/graphql/graphql.component';
-import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -44,6 +53,7 @@ import { FormsModule } from '@angular/forms';
     MatListModule,
     MatFormFieldModule,
     MatInputModule,
+    MatTableModule,
     AmplifyUIAngularModule,
   ],
   providers: [],
